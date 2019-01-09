@@ -22,9 +22,6 @@ JNIEXPORT jstring JNICALL Java_Data2Hex_data2Hex
     result[0] = '\0';
     strcpy(d1, c_d1);
     strcpy(d3, c_d3);
-//    printf("%s\n", d1);
-//    printf("%lx\n", j_d2);
- //   printf("%s\n", d3);
 
     strcat(result, StringToHex(d1));
     strcat(result, LongToHex((long) j_d2));
@@ -36,7 +33,7 @@ JNIEXPORT jstring JNICALL Java_Data2Hex_data2Hex
 
     free(d1);
     free(d3);
-//    printf("result = %s\n", result);
+
     return env->NewStringUTF(result);
 
 }
@@ -53,7 +50,7 @@ char* LongToHex(long input) {
         sprintf(buffer, "%X", (int)(data >> i));
         strcat(result, buffer);
     }
-//    printf("LongToHex = %s\n", result);
+
     return result;
 
 }
@@ -72,6 +69,6 @@ char* StringToHex(char* input) {
             strcat(result, buffer);
         }
     }
-    // printf("StringToHex = %s\n",result);
+
     return result;
 }
