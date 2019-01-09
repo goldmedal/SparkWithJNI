@@ -7,10 +7,10 @@ Practice how to use Spark invoke a native function implemented by C.
 2. move all class files to project home path.
 3. generate header file.
 ```shell
-LIBS_HOME=/usr/local/Cellar/scala/2.12.4/libexec/lib
+LIBS_HOME=$SCALA_HOME/libexec/lib
 CP=$LIBS_HOME/scala-library.jar
 
-javah -cp $CP:. Sample1
+javah -cp $CP:. Data2Hex
 ```
 4. copy `jni.h` and `jni_md.h` to `/usr/include`
     - `jni.h` in $JAVA_HOME/include
